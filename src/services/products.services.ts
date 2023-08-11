@@ -7,6 +7,15 @@ async function create(product: Product): Promise<Product> {
   return newProduct.dataValues;
 }
 
+async function getAll(): Promise<Product[]> {
+  const productList = await ProductModel.findAll();
+
+  // console.log(productList);
+
+  return productList.map((product) => product.dataValues);
+}
+
 export = {
   create,
+  getAll,
 };
