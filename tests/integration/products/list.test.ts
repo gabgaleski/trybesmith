@@ -1,9 +1,7 @@
 import sinon from 'sinon';
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
-import ProductModel from '../../../src/database/models/product.model';
 import app from '../../../src/app';
-import { listMock } from '../../mocks/products.mock';
 
 chai.use(chaiHttp);
 
