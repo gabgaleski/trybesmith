@@ -4,29 +4,27 @@ const bodyMockProduct = {
   orderId: 4
 }
 
-type list = {
-  id:number,
-  name: string,
-  price: string,
-  orderId: number | null
+const bodyMockNoName = {
+  name: '',
+  price: "30 peças de ouro",
+  orderId: 4
 }
 
-const listMock: list[] = [
-  {
-    id: 1,
-    name: "Pedra Filosofal",
-    price: "20 gold",
-    orderId: null
-  },
-  {
-    id: 2,
-    name: "Lança do Destino",
-    price: "100 diamond",
-    orderId: 1
-  }
-]
+const bodyMockNumberName = {
+  name: 123,
+  price: "30 peças de ouro",
+  orderId: 4
+}
+
+const bodyMockNoPrice = {
+  name: 'Perna de pau',
+  price: "",
+  orderId: 4
+}
 
 export {
   bodyMockProduct,
-  listMock
+  bodyMockNoName,
+  bodyMockNumberName,
+  bodyMockNoPrice,
 }

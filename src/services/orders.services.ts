@@ -14,7 +14,7 @@ async function getAll(): Promise<OrderResult[]> {
   const listItems = orderList.map(({ dataValues }) => ({
     id: dataValues.id,
     userId: dataValues.userId,
-    productIds: dataValues.productIds?.map((orderId) => orderId.id),
+    productIds: dataValues.productIds?.map((orderId) => orderId.id), // productIds = [ { id, name, price, order }]
   }));
 
   return listItems;
