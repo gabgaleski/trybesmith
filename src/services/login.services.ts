@@ -14,8 +14,7 @@ async function login(loginObj: { username: string, password: string }): Promise<
   if (!result || !bcrypt.compareSync(password, result.dataValues.password)) {
     return { message: 'Username or password invalid' };
   }
-  const { id } = result.dataValues;
-  const token = jwt.generateToken({ id, username });
+  const token = jwt.generateToken({ password, username });
 
   return { message: 'SUCESSFUL', token };
 }

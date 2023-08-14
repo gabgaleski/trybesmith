@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken';
 const secret = process.env.JWT_SECRET || 'secret';
 
 type TokenPayload = {
-  id: number,
   username: string,
+  password: string,
 };
 
 function generateToken(payload: TokenPayload): string {

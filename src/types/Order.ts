@@ -11,3 +11,8 @@ export type OrderResult = {
   userId: number;
   productIds?: number[];
 };
+
+export type OrderCreate = {
+  userId: number;
+  productIds: number[];
+};
