@@ -1,8 +1,8 @@
 import OrderModel from '../database/models/order.model';
-import { Order } from '../types/Order';
+import { OrderResult } from '../types/Order';
 import ProductModel from '../database/models/product.model';
 
-async function getAll(): Promise<Order[]> {
+async function getAll(): Promise<OrderResult[]> {
   const orderList = await OrderModel.findAll(
     {
       include: [
@@ -11,7 +11,11 @@ async function getAll(): Promise<Order[]> {
     },
   );
 
-  const listItems = orderList.map((product) => product.dataValues);
+  const listItems = orderList.map(({ dataValues }) => ({
+    id: dataValues.id,
+    userId: dataValues.userId,
+    productIds: dataValues.productIds?.map((orderId) => orderId.id),
+  }));
 
   return listItems;
 }
