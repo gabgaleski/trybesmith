@@ -1,4 +1,4 @@
-# :hammer: TrybeSmith :shield:
+# TrybeSmith
 
 <br>
 
